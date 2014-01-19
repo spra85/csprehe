@@ -118,5 +118,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-ember-handlebars');
 
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'haml', 'ember_handlebars']);
-
+  grunt.registerTask('deploy', ['default', 'copy', 's3']);
 }
