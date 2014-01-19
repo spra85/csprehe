@@ -97,17 +97,25 @@ module.exports = function(grunt){
         cwd: "public/",
         src: "**"
       }
+    },
+    copy: {
+      main: {
+        files: [
+          { expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'public/fonts', filter: 'isFile' },
+        ]
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-aws');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-haml');
-  grunt.loadNpmTasks('grunt-ember-handlebars');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-aws');
+  grunt.loadNpmTasks('grunt-ember-handlebars');
 
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'haml', 'ember_handlebars']);
 
