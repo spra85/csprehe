@@ -3,10 +3,14 @@
   %head
     %meta{ charset: "utf-8" }
     %link{ rel: "stylesheet", href: "stylesheets/application.min.css" }
-    %script{ type: "text/javascript", src: "javascript/application.min.js" }
+    %script{ type: "text/javascript", src: "https://maps.googleapis.com/maps/api/js?sensor=false" }
+    %script{ type: "text/javascript", src: "javascript/application.js" }
+    %script{ type: "text/javascript", src: "templates.js" }
+    %script{ type: "text/javascript", src: "http://matchingnotes.com/javascripts/leaflet-google.js" }
+
     %title
       chrissprehe.com
-  %body.container
+  %body#container
     %header
       %h1 Chris Sprehe
     .icons
@@ -22,3 +26,6 @@
         %i.fa.fa-instagram
       %a{ href: "http://www.flickr.com/photos/85229626@N05/", target: "_blank" }
         %i.fa.fa-flickr
+    #main
+  :javascript
+      App.advanceReadiness();

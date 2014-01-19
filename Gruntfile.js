@@ -8,8 +8,15 @@ module.exports = function(grunt){
           'bower_components/jquery/jquery.js',
           'bower_components/handlebars/handlebars.js',
           'bower_components/ember/ember.prod.js',
-          'bower_components/ember-data/ember-data.js',
-          'assets/javascript/**/*.js'
+          'bower_components/leaflet-dist/leaflet-src.js',
+          'bower_components/ember-leaflet/dist/ember-leaflet.js',
+          'assets/javascript/application.js',
+          'assets/javascript/router.js',
+          'assets/javascript/components/**/*.js',
+          'assets/javascript/controllers/**/*.js',
+          'assets/javascript/models/**/*.js',
+          'assets/javascript/routes/**/*.js',
+          'assets/javascript/views/**/*.js'
         ],
         dest: 'public/javascript/application.js'
       }
@@ -17,26 +24,29 @@ module.exports = function(grunt){
     cssmin: {
       combine: {
         files: {
-            'public/stylesheets/application.min.css': 'public/stylesheets/application.css'
+          'public/stylesheets/application.min.css': [
+            'public/stylesheets/application.css',
+            'bower_components/leaflet-dist/leaflet.css'
+          ]
         }
       }
     },
     ember_handlebars: {
       options: {
         processName: function(filePath) {
-          var shortFilePath = filePath.replace(/assets\/templates\//, '').replace('.hbs', '');
+          var shortFilePath = filePath.replace(/assets\/javascript\/templates\//, '').replace('.hbs', '');
           return shortFilePath;
         }
       },
       compile: {
         files: {
-          'public/templates.js': 'assets/templates/**/*.hbs'
+          'public/templates.js': 'assets/javascript/templates/**/*.hbs'
         }
       }
     },
     watch: {
       handlebars: {
-        files: ['assets/templates/**/*.hbs'],
+        files: ['assets/javascript/templates/**/*.hbs'],
         tasks: ['ember_handlebars']
       },
       haml: {
@@ -58,6 +68,7 @@ module.exports = function(grunt){
           'bower_components/normalize-css/normalize.css',
           'bower_components/bourbon/app/assets/stylesheets/bourbon',
           'bower_components/neat/app/assets/stylesheets/neat',
+          'bower_components/leaflet-dist/leaflet.css',
           'assets/stylesheets/*.scss'
         ],
         tasks: ['sass', 'cssmin']
@@ -102,6 +113,7 @@ module.exports = function(grunt){
       main: {
         files: [
           { expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'public/fonts', filter: 'isFile' },
+          { expand: true, flatten: true, src: ['bower_components/leaflet-dist/images/*'], dest: 'public/images', filter: 'isFile' },
         ]
       }
     }
