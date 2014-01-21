@@ -49,7 +49,7 @@ module.exports = function(grunt){
     watch: {
       handlebars: {
         files: ['assets/javascript/templates/**/*.hbs'],
-        tasks: ['ember_handlebars']
+        tasks: ['ember_handlebars', 'concat']
       },
       haml: {
         files: ['index.html.haml'],

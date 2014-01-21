@@ -72,12 +72,29 @@ html {
 
     min-height: 500px;
     min-width: 500px;
+
+    .navigation {
+      @include span-columns(6);
+      @include shift(3);
+
+      list-style-type: none;
+      font-size: 2em;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 
-  #map {
-    @include span-columns(12);
+  #map-container {
 
-    min-width: 500px;
-    min-height: 400px;
+    #map {
+      @include span-columns(12);
+
+      min-width: 500px;
+      min-height: 400px;
+    }
   }
+
 }

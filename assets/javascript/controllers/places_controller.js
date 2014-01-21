@@ -1,10 +1,16 @@
-//L.marker([40.714, -74.000]).addTo(map)
 App.PlacesController = Ember.ArrayController.extend({
-  content: [
-    { location: L.latLng(40.714, -74.000) },
-    { location: L.latLng(40.714, -73.989) },
-    { location: L.latLng(40.721, -73.991) }
-  ],
   zoom: 2,
-  center: L.latLng(40.714, -74.000)
+  center: L.latLng(40.714, -74.000),
+  locations: null,
+
+  setupLocationContent: function() {
+    var content = [];
+    var locations = Ember.A(this.get("locations"));
+
+    locations.forEach(function(latLngHash) {
+      content.push({ location: L.latLng(latLngHash.lat, latLngHash.lon) });
+    });
+    this.set("content", content);
+  }
+
 });
