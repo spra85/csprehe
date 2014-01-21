@@ -16,7 +16,9 @@ module.exports = function(grunt){
           'assets/javascript/controllers/**/*.js',
           'assets/javascript/models/**/*.js',
           'assets/javascript/routes/**/*.js',
-          'assets/javascript/views/**/*.js'
+          'assets/javascript/views/**/*.js',
+          'public/templates.js',
+          'leaflet-google-tb.js'
         ],
         dest: 'public/javascript/application.js'
       }
@@ -129,6 +131,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-ember-handlebars');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'haml', 'ember_handlebars']);
+  grunt.registerTask('default', ['ember_handlebars', 'concat', 'uglify', 'sass', 'cssmin', 'haml']);
   grunt.registerTask('deploy', ['default', 'copy', 's3']);
 }
