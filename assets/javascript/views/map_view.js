@@ -1,3 +1,9 @@
+L.Icon.Default.imagePath = "images";
+
+// App.customMarkerIcon = L.icon({
+//   iconUrl: 'Map-icon.png'
+// });
+
 App.MarkerCollectionLayer = EmberLeaflet.MarkerCollectionLayer.extend({
   contentBinding: "controller"
 });

@@ -1,4 +1,3 @@
-L.Icon.Default.imagePath = "images";
 App = Ember.Application.create({
   rootElement: "#main",
   currentPath: "",
