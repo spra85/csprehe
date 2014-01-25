@@ -3,7 +3,8 @@
   "dependencies": {
     "ember": "~1.3.0-beta.4",
     "ember-data": "~1.0.0-beta.4",
-    "ember-leaflet": "https://github.com/gabesmed/ember-leaflet.git#master",
+    "ember-leaflet": "master",
+    "leaflet-plugins": "1.0.1",
     "font-awesome": "4.0.3",
     "handlebars": "~1.3.0",
     "jquery": "~2.0.3",
