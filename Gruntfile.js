@@ -8,8 +8,11 @@ module.exports = function(grunt){
           'bower_components/jquery/jquery.js',
           'bower_components/handlebars/handlebars.js',
           'bower_components/ember/ember.prod.js',
+          'bower_components/ember-data/ember-data.js',
           'bower_components/leaflet-dist/leaflet-src.js',
-          'bower_components/ember-leaflet/dist/ember-leaflet.js',
+          'bower_components/ember-leaflet/ember-leaflet.js',
+          'bower_components/leaflet-plugins/layer/tile/Google.js',
+          'bower_components/ember-animated-outlet/dist/ember-animated-outlet.js',
           'assets/javascript/application.js',
           'assets/javascript/router.js',
           'assets/javascript/components/**/*.js',
@@ -18,7 +21,7 @@ module.exports = function(grunt){
           'assets/javascript/routes/**/*.js',
           'assets/javascript/views/**/*.js',
           'public/templates.js',
-          'leaflet-google-tb.js'
+          'assets/javascript/fixtures.js'
         ],
         dest: 'public/javascript/application.js'
       }
@@ -28,6 +31,7 @@ module.exports = function(grunt){
         files: {
           'public/stylesheets/application.min.css': [
             'public/stylesheets/application.css',
+            'bower_components/ember-animated-outlet/dist/ember-animated-outlet.css',
             'bower_components/leaflet-dist/leaflet.css'
           ]
         }
@@ -57,10 +61,7 @@ module.exports = function(grunt){
       },
       javascripts: {
         files: [
-          'bower_components/jquery/jquery.js',
-          'bower_components/handlebars/handlebars.js',
-          'bower_components/ember/ember.prod.js',
-          'bower_components/ember-data/ember-data.js',
+          'bower_components/**/*.js',
           'assets/javascript/**/*.js'
         ],
         tasks: ['concat', 'uglify']
@@ -71,6 +72,7 @@ module.exports = function(grunt){
           'bower_components/bourbon/app/assets/stylesheets/bourbon',
           'bower_components/neat/app/assets/stylesheets/neat',
           'bower_components/leaflet-dist/leaflet.css',
+          'bower_components/ember-animated-outlet/dist/ember-animated-outlet.css',
           'assets/stylesheets/*.scss'
         ],
         tasks: ['sass', 'cssmin']
