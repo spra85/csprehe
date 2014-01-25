@@ -47,18 +47,31 @@ html {
     }
   }
 
+  #welcome {
+    @include span-columns(6);
+    @include shift(3);
+    color: white;
+    font-size: 4em;
+  }
+
   .icons {
     @include span-columns(6);
     @include shift(3);
 
     font-color: $dark-gray;
     font-size: 3em;
+    margin-bottom: 40px;
     min-width: 10em;
     text-align: center;
 
     a {
       color: $dark-gray;
       text-decoration: none;
+      -webkit-transition: font-size .3s ease-in-out;
+
+      &:hover {
+        font-size: 1.5em;
+      }
     }
 
     i {
