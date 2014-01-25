@@ -1,5 +1,7 @@
-App.IndexRoute = Ember.Route.extend({
-  redirect: function() {
-    this.transitionTo("places");
+App.ApplicationRoute = Ember.Route.extend({
+  actions: {
+    goToPlaces: function() {
+      this.transitionToAnimated("places", { main: "slowSlideLeft" });
+    }
   }
 });

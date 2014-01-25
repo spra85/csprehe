@@ -1,11 +1,11 @@
 App.PlacesRoute = Ember.Route.extend({
   model: function() {
-    return $.ajax({ url: "http://localhost:3000", dataType: "json" });
+    return this.store.find("place");
   },
 
   setupController: function(controller, model) {
     this._super();
-    controller.set("locations", model.locations);
+    controller.set("places", model);
     controller.setupLocationContent();
   }
 });
