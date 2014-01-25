@@ -21,23 +21,22 @@ html {
   header {
     @include span-columns(12);
 
+    img {
+      border-radius: 27px;
+      width: 60px;
+    }
+
+    span {
+      opacity: 0.6;
+    }
+
     h1 {
       @include span-columns(6);
       @include shift(3);
 
-      $header-border-radius: 8px;
-      @include border-top-radius($header-border-radius);
-      @include border-bottom-radius($header-border-radius);
-      @include border-left-radius($header-border-radius);
-      @include border-right-radius($header-border-radius);
-
-      background-color: $dark-gray;
-      border: 1px solid white;
-      color: white;
-      font-size: 4em;
+      font-size: 4.5em;
       max-width: 10em;
       min-width: 4em;
-      opacity: 0.35;
       padding: 5px;
       text-align: center;
 
@@ -55,13 +54,14 @@ html {
   }
 
   .icons {
-    @include span-columns(6);
-    @include shift(3);
+    @include span-columns(8);
+    @include shift(2);
 
     font-color: $dark-gray;
     font-size: 3em;
     margin-bottom: 40px;
     min-width: 10em;
+    padding: 15px;
     text-align: center;
 
     a {
@@ -89,9 +89,14 @@ html {
 
   #main {
     @include span-columns(12);
+
+    background-color: #f9f9f9;
+    border-radius: 50px;
+    opacity: 0.75;
   }
 
   #map-container {
+    opacity: 1.0;
 
     #map {
       @include span-columns(8);
