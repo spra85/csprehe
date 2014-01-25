@@ -13,6 +13,7 @@ module.exports = function(grunt){
           'bower_components/ember-leaflet/ember-leaflet.js',
           'bower_components/leaflet-plugins/layer/tile/Google.js',
           'bower_components/ember-animated-outlet/dist/ember-animated-outlet.js',
+          'bower_components/underscore/underscore.js',
           'assets/javascript/application.js',
           'assets/javascript/router.js',
           'assets/javascript/components/**/*.js',
