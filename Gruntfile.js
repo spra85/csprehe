@@ -22,7 +22,8 @@ module.exports = function(grunt){
           'assets/javascript/routes/**/*.js',
           'assets/javascript/views/**/*.js',
           'public/templates.js',
-          'assets/javascript/fixtures.js'
+          'assets/javascript/fixtures.js',
+          'assets/javascript/analytics.js'
         ],
         dest: 'public/javascript/application.js'
       }

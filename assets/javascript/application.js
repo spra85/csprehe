@@ -21,4 +21,4 @@ function loadBackgroundImage() {
   $el.css("background-image", "url(" + src + ")");
 }
 
-$(window).on("DOMContentLoaded load", loadBackgroundImage);
+//$(window).on("DOMContentLoaded load", loadBackgroundImage);
