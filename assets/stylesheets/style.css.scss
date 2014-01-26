@@ -65,6 +65,7 @@ html {
     text-align: center;
 
     a {
+      padding: 0 10px;
       color: $dark-gray;
       text-decoration: none;
       -webkit-transition: font-size .3s ease-in-out;
@@ -77,6 +78,10 @@ html {
     i {
       cursor: pointer;
       padding: 0 8px;
+    }
+
+    #description {
+      font-size: 0.5em;
     }
   }
 
