@@ -5,15 +5,12 @@ $fa-font-path: "../fonts";
 
 $dark-gray: #282828;
 
-html {
+#container {
   background:url("../images/background.png") no-repeat center center fixed;
   -webkit-background-size:cover;
   -moz-background-size:cover;
   -o-background-size:cover;
   background-size:cover;
-}
-
-#container {
   @include outer-container;
 
   font-family: $helvetica;
