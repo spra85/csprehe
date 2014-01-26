@@ -9,7 +9,20 @@ module.exports = function(grunt){
           'bower_components/handlebars/handlebars.js',
           'bower_components/ember/ember.prod.js',
           'bower_components/ember-data/ember-data.js',
-          'assets/javascript/**/*.js'
+          'bower_components/leaflet-dist/leaflet-src.js',
+          'bower_components/ember-leaflet/ember-leaflet.js',
+          'bower_components/leaflet-plugins/layer/tile/Google.js',
+          'bower_components/ember-animated-outlet/dist/ember-animated-outlet.js',
+          'bower_components/underscore/underscore.js',
+          'assets/javascript/application.js',
+          'assets/javascript/router.js',
+          'assets/javascript/components/**/*.js',
+          'assets/javascript/controllers/**/*.js',
+          'assets/javascript/models/**/*.js',
+          'assets/javascript/routes/**/*.js',
+          'assets/javascript/views/**/*.js',
+          'public/templates.js',
+          'assets/javascript/fixtures.js'
         ],
         dest: 'public/javascript/application.js'
       }
@@ -17,27 +30,31 @@ module.exports = function(grunt){
     cssmin: {
       combine: {
         files: {
-            'public/stylesheets/application.min.css': 'public/stylesheets/application.css'
+          'public/stylesheets/application.min.css': [
+            'public/stylesheets/application.css',
+            'bower_components/ember-animated-outlet/dist/ember-animated-outlet.css',
+            'bower_components/leaflet-dist/leaflet.css'
+          ]
         }
       }
     },
     ember_handlebars: {
       options: {
         processName: function(filePath) {
-          var shortFilePath = filePath.replace(/assets\/templates\//, '').replace('.hbs', '');
+          var shortFilePath = filePath.replace(/assets\/javascript\/templates\//, '').replace('.hbs', '');
           return shortFilePath;
         }
       },
       compile: {
         files: {
-          'public/templates.js': 'assets/templates/**/*.hbs'
+          'public/templates.js': 'assets/javascript/templates/**/*.hbs'
         }
       }
     },
     watch: {
       handlebars: {
-        files: ['assets/templates/**/*.hbs'],
-        tasks: ['ember_handlebars']
+        files: ['assets/javascript/templates/**/*.hbs'],
+        tasks: ['ember_handlebars', 'concat', 'uglify']
       },
       haml: {
         files: ['index.html.haml'],
@@ -45,10 +62,7 @@ module.exports = function(grunt){
       },
       javascripts: {
         files: [
-          'bower_components/jquery/jquery.js',
-          'bower_components/handlebars/handlebars.js',
-          'bower_components/ember/ember.prod.js',
-          'bower_components/ember-data/ember-data.js',
+          'bower_components/**/*.js',
           'assets/javascript/**/*.js'
         ],
         tasks: ['concat', 'uglify']
@@ -58,6 +72,8 @@ module.exports = function(grunt){
           'bower_components/normalize-css/normalize.css',
           'bower_components/bourbon/app/assets/stylesheets/bourbon',
           'bower_components/neat/app/assets/stylesheets/neat',
+          'bower_components/leaflet-dist/leaflet.css',
+          'bower_components/ember-animated-outlet/dist/ember-animated-outlet.css',
           'assets/stylesheets/*.scss'
         ],
         tasks: ['sass', 'cssmin']
@@ -102,6 +118,7 @@ module.exports = function(grunt){
       main: {
         files: [
           { expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'public/fonts', filter: 'isFile' },
+          { expand: true, flatten: true, src: ['bower_components/leaflet-dist/images/*'], dest: 'public/images', filter: 'isFile' },
         ]
       }
     }
@@ -117,6 +134,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-ember-handlebars');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'haml', 'ember_handlebars']);
+  grunt.registerTask('default', ['ember_handlebars', 'concat', 'uglify', 'sass', 'cssmin', 'haml']);
   grunt.registerTask('deploy', ['default', 'copy', 's3']);
 }
