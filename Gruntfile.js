@@ -54,7 +54,7 @@ module.exports = function(grunt){
     watch: {
       handlebars: {
         files: ['assets/javascript/templates/**/*.hbs'],
-        tasks: ['ember_handlebars', 'concat']
+        tasks: ['ember_handlebars', 'concat', 'uglify']
       },
       haml: {
         files: ['index.html.haml'],

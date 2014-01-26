@@ -34,3 +34,11 @@ App.Place.FIXTURES = [
   { "id": 33, "lat": 52.390687, "lon": 4.895568, "name": "Amsterdam, Netherlands" },
   { "id": 34, "lat": 40.43545, "lon": -3.698487, "name": "Madrid, Spain" }
 ];
+
+App.Blog.FIXTURES = [
+  { "id": 1, "name" : "PostGIS + Rails on Heroku", "url": "http://www.devmynd.com/blog/2013-7-postgis-rails-on-heroku" },
+  { "id": 2, "name" : "ElasticSearch with Rails - Set-up & Mapping", "url": "http://www.devmynd.com/blog/2013-10-elasticsearch-with-rails-part-1" },
+  { "id": 3, "name" : "Ruby XML Sax Parsing", "url": "http://www.devmynd.com/blog/2013-11-ruby-xml-sax-parsing" },
+  { "id": 4, "name" : "Ember.js testing with Jasmine", "url": "http://www.devmynd.com/blog/2014-1-ember-js-testing-with-jasmine" },
+  { "id": 5, "name" : "Using EmberLeaflet with Google Maps", "url": "http://www.devmynd.com/blog/2014-1-using-emberleaflet-with-google-maps" },
+]

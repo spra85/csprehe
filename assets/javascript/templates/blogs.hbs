@@ -1,0 +1,13 @@
+<div class="blogs">
+  <h3>Blogs</h3>
+
+  <ul>
+    {{#each blog in blogs}}
+      <li class="blog">
+        <a {{bindAttr href="blog.url"}} class="blog-link" target="_blank">
+          {{blog.name}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>

@@ -54,12 +54,11 @@ html {
   }
 
   .icons {
-    @include span-columns(8);
-    @include shift(2);
+    @include span-columns(10);
+    @include shift(1);
 
-    font-color: $dark-gray;
     font-size: 3em;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     min-width: 10em;
     padding: 15px;
     text-align: center;
@@ -109,6 +108,25 @@ html {
 
       min-width: 500px;
       min-height: 400px;
+    }
+  }
+
+  .blogs {
+    padding: 10px 75px;
+    font-size: 1.3em;
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .blog {
+      padding: 10px 0;
+    }
+
+    .blog-link {
+      color: $dark-gray;
+      text-decoration: none;
     }
   }
 
