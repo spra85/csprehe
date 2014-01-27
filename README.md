@@ -90,3 +90,17 @@ To run: `grunt s3`
 Runs the `default` grunt task, copies fonts into the public directory, and pushes files up to S3
 
 To run: `grunt deploy`
+
+## Optimizing Image
+
+To convert to specific width but preserve the ratio using ImageMagick, where 2650 represents desired pixel width:
+
+```
+convert background.jpg -resize 2650 background-new.jpg
+```
+
+Then, can use jpegoptim to compress the file even further, 60% for instance of the original: 
+
+```
+jpegoptim -m 60 background-new.jpg
+```
