@@ -1,7 +1,7 @@
 <div class="blogs">
-  <h3>Blogs</h3>
-
   <ul>
+    <li class="header-row"></li>
+    <li class="blog-title">Blog posts</li>
     {{#each blog in blogs}}
       <li class="blog">
         <a {{bindAttr href="blog.url"}} class="blog-link" target="_blank">

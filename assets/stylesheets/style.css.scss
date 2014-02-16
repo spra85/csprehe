@@ -91,9 +91,7 @@ $dark-gray: #282828;
   #main {
     @include span-columns(12);
 
-    background-color: #f9f9f9;
-    border-radius: 50px;
-    opacity: 0.75;
+    /*background-color: rgba(255, 255, 255, 0.5);*/
   }
 
   #map-container {
@@ -114,18 +112,34 @@ $dark-gray: #282828;
     font-size: 1.3em;
 
     ul {
-      padding: 0;
+      background-color: #f5f3ae;
+      border-radius: 8px;
       list-style-type: none;
-    }
+      padding-left: 0;
 
-    .blog {
-      padding: 10px 0;
-    }
+      li {
+        border-bottom: solid 1px #97a8ce;
+        padding: 10px 5px 10px 10px;
 
-    .blog-link {
-      color: $dark-gray;
-      text-decoration: none;
+        &.header-row {
+          background-color: #4f2d00;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          min-width: 100%;
+          min-height: 35px;
+        }
+
+        &.blog-title {
+          font-size: 1.4em;
+        }
+
+        &.blog {
+          .blog-link {
+            color: #483B3B;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
-
 }
