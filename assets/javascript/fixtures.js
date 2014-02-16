@@ -41,4 +41,5 @@ App.Blog.FIXTURES = [
   { "id": 3, "name" : "Ruby XML Sax Parsing", "url": "http://www.devmynd.com/blog/2013-11-ruby-xml-sax-parsing" },
   { "id": 4, "name" : "Ember.js testing with Jasmine", "url": "http://www.devmynd.com/blog/2014-1-ember-js-testing-with-jasmine" },
   { "id": 5, "name" : "Using EmberLeaflet with Google Maps", "url": "http://www.devmynd.com/blog/2014-1-using-emberleaflet-with-google-maps" },
+  { "id": 6, "name" : "We will learn every day, we will teach everyday.", "url": "http://www.devmynd.com/blog/2014-2-we-will-learn-every-day-we-will-teach-everyday" },
 ];
