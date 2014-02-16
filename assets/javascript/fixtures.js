@@ -32,7 +32,8 @@ App.Place.FIXTURES = [
   { "id": 31, "lat": 50.099441, "lon": 14.43994, "name": "Prague, Czech Republic" },
   { "id": 32, "lat": 37.99021, "lon": 23.730415, "name": "Athens, Greece" },
   { "id": 33, "lat": 52.390687, "lon": 4.895568, "name": "Amsterdam, Netherlands" },
-  { "id": 34, "lat": 40.43545, "lon": -3.698487, "name": "Madrid, Spain" }
+  { "id": 34, "lat": 40.43545, "lon": -3.698487, "name": "Madrid, Spain" },
+  { "id": 35, "lat": 29.959557, "lon": -90.064861, "name": "New Orleans, LA" }
 ];
 
 App.Blog.FIXTURES = [
