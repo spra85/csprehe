@@ -6,24 +6,12 @@ module.exports = function(grunt){
       dist: {
         src: [
           'bower_components/jquery/jquery.js',
-          'bower_components/handlebars/handlebars.js',
-          'bower_components/ember/ember.prod.js',
-          'bower_components/ember-data/ember-data.js',
-          'bower_components/leaflet-dist/leaflet-src.js',
-          'bower_components/ember-leaflet/ember-leaflet.js',
-          'bower_components/leaflet-plugins/layer/tile/Google.js',
-          'bower_components/ember-animated-outlet/dist/ember-animated-outlet.js',
           'bower_components/underscore/underscore.js',
+          'assets/javascript/analytics.js',
+          'assets/javascript/lib/**/*.js',
           'assets/javascript/application.js',
-          'assets/javascript/router.js',
-          'assets/javascript/components/**/*.js',
-          'assets/javascript/controllers/**/*.js',
-          'assets/javascript/models/**/*.js',
-          'assets/javascript/routes/**/*.js',
-          'assets/javascript/views/**/*.js',
-          'public/templates.js',
           'assets/javascript/fixtures.js',
-          'assets/javascript/analytics.js'
+          'assets/javascript/controllers/**/*.js'
         ],
         dest: 'public/javascript/application.js'
       }
@@ -31,32 +19,11 @@ module.exports = function(grunt){
     cssmin: {
       combine: {
         files: {
-          'public/stylesheets/application.min.css': [
-            'public/stylesheets/application.css',
-            'bower_components/ember-animated-outlet/dist/ember-animated-outlet.css',
-            'bower_components/leaflet-dist/leaflet.css'
-          ]
-        }
-      }
-    },
-    ember_handlebars: {
-      options: {
-        processName: function(filePath) {
-          var shortFilePath = filePath.replace(/assets\/javascript\/templates\//, '').replace('.hbs', '');
-          return shortFilePath;
-        }
-      },
-      compile: {
-        files: {
-          'public/templates.js': 'assets/javascript/templates/**/*.hbs'
+          'public/stylesheets/application.min.css': ['public/stylesheets/application.css']
         }
       }
     },
     watch: {
-      handlebars: {
-        files: ['assets/javascript/templates/**/*.hbs'],
-        tasks: ['ember_handlebars', 'concat', 'uglify']
-      },
       haml: {
         files: ['index.html.haml'],
         tasks: ['haml']
@@ -71,10 +38,6 @@ module.exports = function(grunt){
       css: {
         files: [
           'bower_components/normalize-css/normalize.css',
-          'bower_components/bourbon/app/assets/stylesheets/bourbon',
-          'bower_components/neat/app/assets/stylesheets/neat',
-          'bower_components/leaflet-dist/leaflet.css',
-          'bower_components/ember-animated-outlet/dist/ember-animated-outlet.css',
           'assets/stylesheets/*.scss'
         ],
         tasks: ['sass', 'cssmin']
@@ -88,12 +51,9 @@ module.exports = function(grunt){
       }
     },
     sass: {
-      options: {
-        loadPath: require('node-neat').includePaths
-      },
       dist: {
         files: {
-          'public/stylesheets/application.css': 'assets/stylesheets/style.css.scss'
+          'public/stylesheets/application.css': 'assets/stylesheets/style.scss'
         }
       }
     },
@@ -118,8 +78,7 @@ module.exports = function(grunt){
     copy: {
       main: {
         files: [
-          { expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'public/fonts', filter: 'isFile' },
-          { expand: true, flatten: true, src: ['bower_components/leaflet-dist/images/*'], dest: 'public/images', filter: 'isFile' },
+          { expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'public/fonts', filter: 'isFile' }
         ]
       }
     }
@@ -133,8 +92,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-ember-handlebars');
 
-  grunt.registerTask('default', ['ember_handlebars', 'concat', 'uglify', 'sass', 'cssmin', 'haml']);
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'haml']);
   grunt.registerTask('deploy', ['default', 'copy', 's3']);
 }

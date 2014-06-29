@@ -1,0 +1,17 @@
+{
+  "predef": {
+    "document": true,
+    "window": true,
+    "screen": true,
+    "location": true,
+    "setTimeout": true,
+    "clearTimeout": true,
+    "$": true,
+    "_": true,
+    "moment": true,
+    "module": true,
+    "require": true,
+    "google": true,
+    "ShortBus": true
+  }
+}

@@ -1,4 +1,4 @@
-App.Place.FIXTURES = [
+Me.Data.Locations = [
   { "id": 1, "lat": 22.173715, "lon": -159.639612, "name": "Na Pali Coast State Park, HI" },
   { "id": 2, "lat": 22.087071, "lon": -159.336632, "name": "Kauai, HI" },
   { "id": 3, "lat": 21.52846, "lon": -157.898469, "name": "Oahu, HI" },
@@ -36,11 +36,13 @@ App.Place.FIXTURES = [
   { "id": 35, "lat": 29.959557, "lon": -90.064861, "name": "New Orleans, LA" }
 ];
 
-App.Blog.FIXTURES = [
+Me.Data.Blogs = [
   { "id": 1, "name" : "PostGIS + Rails on Heroku", "url": "http://www.devmynd.com/blog/2013-7-postgis-rails-on-heroku" },
   { "id": 2, "name" : "ElasticSearch with Rails - Set-up & Mapping", "url": "http://www.devmynd.com/blog/2013-10-elasticsearch-with-rails-part-1" },
   { "id": 3, "name" : "Ruby XML Sax Parsing", "url": "http://www.devmynd.com/blog/2013-11-ruby-xml-sax-parsing" },
   { "id": 4, "name" : "Ember.js testing with Jasmine", "url": "http://www.devmynd.com/blog/2014-1-ember-js-testing-with-jasmine" },
   { "id": 5, "name" : "Using EmberLeaflet with Google Maps", "url": "http://www.devmynd.com/blog/2014-1-using-emberleaflet-with-google-maps" },
   { "id": 6, "name" : "We will learn every day, we will teach everyday.", "url": "http://www.devmynd.com/blog/2014-2-we-will-learn-every-day-we-will-teach-everyday" },
+  { "id": 7, "name" : "GeoHash Grid Aggregation with ElasticSearch", "url": "http://www.devmynd.com/blog/2014-2-geohash-grid-aggregation-with-elasticsearch" },
+  { "id": 8, "name" : "Image Cropping with JCrop & Cloudinary", "url": "http://www.devmynd.com/blog/2014-6-image-cropping-with-jcrop-cloudinary" }
 ];

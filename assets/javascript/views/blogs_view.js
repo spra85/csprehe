@@ -1,1 +1,0 @@
-App.BlogsView = Ember.View.extend();

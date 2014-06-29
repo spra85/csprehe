@@ -1,17 +1,75 @@
-!!! 5
 %html
   %head
     %meta{ charset: "utf-8" }
-    %link{ rel: "stylesheet", href: "stylesheets/application.min.css" }
+    %link{ rel: "stylesheet", type: "text/css", href: "stylesheets/application.min.css" }
+    %link{ rel: "stylesheet", type: "text/css", href: "http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500|Pacifico" }
     %script{ type: "text/javascript", src: "https://maps.googleapis.com/maps/api/js?sensor=false" }
     %script{ type: "text/javascript", src: "javascript/application.min.js" }
 
     %title
-      chrissprehe.com
-  %body#container{ "data-src" => "images/background.png", "data-x2-src" => "images/background-2x.png" }
+      ChrisSprehe.com
+  %body#container
     %header
-      %h1
-        %span Welcome.
-    #main
-  :javascript
-      App.advanceReadiness();
+      %nav
+        %h1
+          %span Welcome.
+        .headshot
+          %img{ src: "images/headshot.jpg" }
+        %ul.icons
+          %a.nav-link{ href: "https://github.com/spra85", target: "_blank" }
+            %li
+              %i.fa.fa-github
+                %span.desc GitHub
+          %a.nav-link{ href: "https://twitter.com/csprehe9", target: "_blank" }
+            %li
+              %i.fa.fa-twitter
+                %span.desc Twitter
+          %a.nav-link{ href: "https://www.facebook.com/chris.sprehe", target: "_blank" }
+            %li
+              %i.fa.fa-facebook-square
+                %span.desc Facebook
+          %a.nav-link{ href: "http://www.linkedin.com/profile/view?id=18713662", target: "_blank" }
+            %li
+              %i.fa.fa-linkedin-square
+                %span.desc LinkedIn
+          %a.nav-link{ href: "http://instagram.com/csprehe9", target: "_blank" }
+            %li
+              %i.fa.fa-instagram
+                %span.desc Instagram
+          %a.nav-link{ href: "http://www.flickr.com/photos/85229626@N05/", target: "_blank" }
+            %li
+              %i.fa.fa-flickr
+                %span.desc Flickr
+          %a.nav-link{ href: "#" }
+            %li
+              %i.fa.fa-globe
+                %span.desc Travel
+          %a.nav-link{ href: "#" }
+            %li
+              %i.fa.fa-pencil
+                %span.desc Blogs
+    %section.github
+      .icon
+        %a{ href: "https://github.com/spra85", target: "_blank" }
+          %i.fa.fa-github
+      .desc
+        Programmer by trade
+    %section.travel
+      #map
+      .desc
+        I
+        %i.fa.fa-heart-o
+        to travel.
+    %section.blogs
+      .desc
+        %span
+          I occasionally
+          %i.fa.fa-pencil
+          for
+        %a{ href: "http://www.devmynd.com", target: "_blank" }
+          %img{ src: "images/devmynd.png" }
+      %ul.posts
+
+:javascript
+  Me.Dispatcher.trigger('initHomepage');
+
