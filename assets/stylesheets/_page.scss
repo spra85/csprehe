@@ -14,7 +14,7 @@
       }
     }
 
-    @include media($tablet) {
+    @include media {
       background: #000 url("../images/background-new.jpg") no-repeat;
       background-size: cover;
       min-height: 540px;
@@ -33,7 +33,7 @@
       top: 10px;
       right: 10px;
 
-      @include media($tablet) {
+      @include media {
         position: static;
         float: left;
         padding: 20px;
@@ -49,7 +49,7 @@
       padding: 0;
       list-style-type: none;
 
-      @include media($tablet) {
+      @include media {
         float: right;
       }
 
@@ -59,7 +59,7 @@
         text-decoration: none;
         font-weight: bold;
 
-        @include media($tablet) {
+        @include media {
           color: $white;
           display: inline-block;
 
@@ -74,7 +74,7 @@
           border-bottom: 1px solid $gray;
           cursor: pointer;
 
-          @include media($tablet) {
+          @include media {
             border-bottom: none;
           }
 
@@ -84,7 +84,7 @@
             .desc {
               font-size: 30px;
 
-              @include media($tablet) {
+              @include media {
                 display: none;
               }
             }
