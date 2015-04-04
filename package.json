@@ -1,6 +1,9 @@
 {
   "name": "csprehe",
   "version": "0.1.0",
+  "scripts": {
+    "postinstall": "bower install"
+  },
   "devDependencies": {
     "font-awesome": "4.0.3",
     "grunt": "~0.4.2",
