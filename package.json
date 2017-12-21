@@ -5,6 +5,7 @@
     "postinstall": "bower install"
   },
   "devDependencies": {
+    "uglify-js": "~2.6.0",
     "font-awesome": "4.0.3",
     "grunt": "^0.4.5",
     "grunt-aws": "0.3.0",
