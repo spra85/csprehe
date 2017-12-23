@@ -4,7 +4,10 @@ body, h1 {
 }
 
 #container {
-  position: relative;
-  width: 100%;
-  color: $gray;
+  header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

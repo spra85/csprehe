@@ -1,193 +1,23 @@
 #container {
   header {
-    margin-bottom: 50px;
-
-    @include media {
-      margin-bottom: 0;
-    }
-
-    nav {
-      @include clearfix;
-
-      h1 {
-        @include cursive;
-      }
-    }
-
-    @include media {
-      background: #000 url("../images/background-new.jpg") no-repeat;
-      background-size: cover;
-      min-height: 540px;
-
-      h1 {
-        display: none;
-      }
-
-      nav {
-        @include background-gradient;
-      }
-    }
-
-    .headshot {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-
-      @include media {
-        position: static;
-        float: left;
-        padding: 20px;
-      }
-
-      img {
-        width: 100px;
-        border-radius: 70px;
-      }
-    }
-
     .icons {
       padding: 0;
       list-style-type: none;
-
-      @include media {
-        float: right;
-      }
+      width: 100%;
 
       a {
         font-size: 35px;
-        color: $gray;
+        color: $black;
         text-decoration: none;
         font-weight: bold;
-
-        @include media {
-          color: $white;
-          display: inline-block;
-
-          &:hover {
-            color: $black;
-          }
-        }
+        display: inline-block;
 
         li {
-          height: 75px;
           padding: 10px;
-          border-bottom: 1px solid $gray;
           cursor: pointer;
-
-          @include media {
-            border-bottom: none;
-          }
 
           .fa {
             padding-top: 20px;
-
-            .desc {
-              font-size: 30px;
-
-              @include media {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  section {
-    @include clearfix;
-    @include media {
-      padding: 10px 30px 30px 130px;
-
-      .desc {
-        padding: 85px;
-      }
-    }
-
-    .desc {
-      color: $black;
-      font-weight: bold;
-      font-size: 40px;
-    }
-
-    &.github {
-      background-color: $off-white;
-      display: none;
-
-      @include media {
-        display: block;
-      }
-
-      .icon {
-        font-size: 200px;
-        padding: 50px;
-        float: right;
-
-        a {
-          color: $gray;
-          text-decoration: none;
-        }
-      }
-
-      .desc {
-        float: left;
-      }
-    }
-
-    &.travel {
-      .desc {
-        @include cursive;
-        text-align: center;
-
-        @include media {
-          float: right;
-        }
-
-        i {
-          color: $red;
-        }
-      }
-
-      #map {
-        min-height: 300px;
-        width: 100%;
-
-        @include media {
-          float: left;
-          width: 60%;
-        }
-      }
-    }
-
-    &.blogs {
-      background-color: $off-white;
-
-      .desc {
-        font-size: 30px;
-
-        @include media {
-          padding: 85px 0;
-          float: left;
-        }
-
-        i {
-          color: $dark-blue;
-        }
-      }
-
-      .posts {
-        list-style-type: none;
-
-        @include media {
-          float: right;
-        }
-
-        a {
-          text-decoration: none;
-          color: $black;
-
-          li {
-            padding: 6px;
           }
         }
       }
