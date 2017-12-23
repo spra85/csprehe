@@ -10,7 +10,12 @@
         color: $black;
         text-decoration: none;
         font-weight: bold;
-        display: inline-block;
+        font-size: 150px;
+
+        @include media {
+          display: inline-block;
+          font-size: 75px;
+        }
 
         li {
           padding: 10px;
